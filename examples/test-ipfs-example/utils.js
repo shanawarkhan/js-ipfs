@@ -23,7 +23,13 @@ async function startServer (dir) {
 
         if (output.includes('Hit CTRL-C to stop the server')) {
           // find the port
-          const port = output.match(/http:\/\/127.0.0.1:(\d+)/)[1]
+          const matches = output.match(/http:\/\/127.0.0.1:(\d+)/)
+
+          if (!matches) {
+            throw new Error(`Could not find port in ${output}`)
+          }
+
+          const port = matches[1]
 
           if (!port) {
             throw new Error(`Could not find port in ${output}`)
