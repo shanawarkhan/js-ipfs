@@ -196,7 +196,7 @@
     "wrtc": "^0.4.4"
   },
   "optionalDependencies": {
-    "prom-client": "^11.2.1",
+    "prom-client": "^12.0.0",
     "prometheus-gc-stats": "^0.6.0"
   },
   "engines": {
